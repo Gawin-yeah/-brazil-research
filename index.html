@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brazil User Research Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f8;
+      color: #222;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 880px;
+      margin: 32px auto;
+      background: #fff;
+      padding: 36px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 21px;
+    }
+    .intro {
+      color: #555;
+      margin-bottom: 28px;
+    }
+    .question {
+      margin: 22px 0;
+    }
+    label.q {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    input[type="text"], input[type="number"], select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      background: white;
+    }
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    .option {
+      display: block;
+      margin: 6px 0;
+    }
+    .note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 4px;
+    }
+    .button-row {
+      margin-top: 34px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      background: #111;
+      color: #fff;
+    }
+    button.secondary {
+      background: #eee;
+      color: #222;
+    }
+    .required {
+      color: #d33;
+    }
+    .footer-note {
+      margin-top: 24px;
+      color: #666;
+      font-size: 14px;
+    }
+    @media print {
+      body { background: white; }
+      .container { box-shadow: none; margin: 0; max-width: none; }
+      .button-row { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Brazil Female User Research Survey</h1>
+  <p class="intro">
+    This survey is about photo editing, AI beauty tools, AI tattoos, video beautification, AI influencers, and K-pop trends in Brazil.
+    There are no right or wrong answers. Your responses will only be used for product research. You may skip any question you do not feel comfortable answering.
+  </p>
+
+  <form id="surveyForm">
+
+    <h2>1. Basic Information</h2>
+
+    <div class="question">
+      <label class="q">1. Age</label>
+      <select name="age">
+        <option value="">Select one</option>
+        <option>Under 18</option>
+        <option>18–20</option>
+        <option>21–24</option>
+        <option>25–29</option>
+        <option>30–34</option>
+        <option>35 or above</option>
+        <option>Prefer not to say</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">2. City and state in Brazil</label>
+      <input type="text" name="city_state" placeholder="Example: São Paulo, SP" />
+    </div>
+
+    <div class="question">
+      <label class="q">3. Current status</label>
+      <select name="status">
+        <option value="">Select one</option>
+        <option>Student</option>
+        <option>Working full-time</option>
+        <option>Working part-time</option>
+        <option>Freelancer</option>
+        <option>Currently not working</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">4. Which best describes your lifestyle / spending situation?</label>
+      <select name="lifestyle">
+        <option value="">Select one</option>
+        <option>I usually have a limited budget and prefer free options</option>
+        <option>I spend carefully, but I will pay for things I really like</option>
+        <option>I have stable income and often pay for useful apps/services</option>
+        <option>I care more about quality and experience than price</option>
+        <option>Prefer not to answer</option>
+      </select>
+      <div class="note">This question is only to understand different user groups, not to judge personal income.</div>
+    </div>
+
+    <div class="question">
+      <label class="q">5. What phone do you currently use?</label>
+      <input type="text" name="phone" placeholder="Example: iPhone 13 / Samsung Galaxy A54 / Xiaomi Redmi Note 12" />
+    </div>
+
+    <h2>2. Photo Editing Habits</h2>
+
+    <div class="question">
+      <label class="q">6. How often do you edit photos?</label>
+      <select name="edit_frequency">
+        <option value="">Select one</option>
+        <option>Almost every day</option>
+        <option>A few times a week</option>
+        <option>A few times a month</option>
+        <option>Only occasionally</option>
+        <option>Almost never</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">7. Which photo editing apps do you use? Select all that apply.</label>
+      <label class="option"><input type="checkbox" name="apps" value="Instagram" /> Instagram</label>
+      <label class="option"><input type="checkbox" name="apps" value="TikTok" /> TikTok</label>
+      <label class="option"><input type="checkbox" name="apps" value="CapCut" /> CapCut</label>
+      <label class="option"><input type="checkbox" name="apps" value="Picsart" /> Picsart</label>
+      <label class="option"><input type="checkbox" name="apps" value="Canva" /> Canva</label>
+      <label class="option"><input type="checkbox" name="apps" value="Facetune" /> Facetune</label>
+      <label class="option"><input type="checkbox" name="apps" value="Snapchat" /> Snapchat</label>
+      <label class="option"><input type="checkbox" name="apps" value="Other" /> Other</label>
+      <input type="text" name="apps_other" placeholder="Other apps, if any" />
+    </div>
+
+    <div class="question">
+      <label class="q">8. What features do you use most often? Select up to 3.</label>
+      <label class="option"><input type="checkbox" name="features" value="Filters" /> Filters</label>
+      <label class="option"><input type="checkbox" name="features" value="Color adjustment" /> Color adjustment</label>
+      <label class="option"><input type="checkbox" name="features" value="Skin smoothing" /> Skin smoothing</label>
+      <label class="option"><input type="checkbox" name="features" value="Face reshaping" /> Face reshaping</label>
+      <label class="option"><input type="checkbox" name="features" value="Makeup effects" /> Makeup effects</label>
+      <label class="option"><input type="checkbox" name="features" value="Background editing" /> Background editing</label>
+      <label class="option"><input type="checkbox" name="features" value="AI effects" /> AI effects</label>
+      <label class="option"><input type="checkbox" name="features" value="Stickers/text" /> Stickers/text</label>
+    </div>
+
+    <div class="question">
+      <label class="q">9. When editing photos, what result do you prefer?</label>
+      <select name="editing_style">
+        <option value="">Select one</option>
+        <option>Very natural, almost invisible editing</option>
+        <option>Slightly prettier but still realistic</option>
+        <option>Clearly enhanced and more attractive</option>
+        <option>Creative, trendy, or dramatic effects</option>
+      </select>
+    </div>
+
+    <h2>3. AI Photo Editing</h2>
+
+    <div class="question">
+      <label class="q">10. Have you used AI photo editing features before?</label>
+      <select name="used_ai">
+        <option value="">Select one</option>
+        <option>Yes, many times</option>
+        <option>Yes, a few times</option>
+        <option>I have seen them but rarely used them</option>
+        <option>No, never</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">11. Which AI features are most interesting to you? Select up to 3.</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="Natural AI beautification" /> Natural AI beautification</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI makeup" /> AI makeup</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI hairstyle/hair color" /> AI hairstyle / hair color</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI avatars" /> AI avatars</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI background replacement" /> AI background replacement</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI tattoo preview" /> AI tattoo preview</label>
+      <label class="option"><input type="checkbox" name="ai_interest" value="AI outfit change" /> AI outfit change</label>
+    </div>
+
+    <div class="question">
+      <label class="q">12. What concerns do you have about AI editing? Select all that apply.</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="Privacy" /> Privacy</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="Fake-looking results" /> Fake-looking results</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="Misuse of photos" /> Misuse of photos</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="Unrealistic beauty standards" /> Unrealistic beauty standards</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="Too expensive" /> Too expensive</label>
+      <label class="option"><input type="checkbox" name="ai_concerns" value="No major concerns" /> No major concerns</label>
+    </div>
+
+    <div class="question">
+      <label class="q">13. Would you pay for high-quality AI editing features?</label>
+      <select name="pay_ai">
+        <option value="">Select one</option>
+        <option>Yes, definitely</option>
+        <option>Maybe, if the result is very good</option>
+        <option>Maybe, if the price is low</option>
+        <option>No, I prefer free tools</option>
+      </select>
+    </div>
+
+    <h2>4. Tattoos & AI Tattoo Feature</h2>
+
+    <div class="question">
+      <label class="q">14. Do you have any tattoos?</label>
+      <select name="has_tattoo">
+        <option value="">Select one</option>
+        <option>Yes</option>
+        <option>No, but I want one</option>
+        <option>No, but I have considered it</option>
+        <option>No, and I am not interested</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">15. How common are tattoos among young people in Brazil?</label>
+      <select name="tattoo_common">
+        <option value="">Select one</option>
+        <option>Very common</option>
+        <option>Quite common</option>
+        <option>Somewhat common</option>
+        <option>Not very common</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">16. How are tattoos generally viewed in your city?</label>
+      <select name="tattoo_view">
+        <option value="">Select one</option>
+        <option>Very accepted</option>
+        <option>Mostly accepted, especially among young people</option>
+        <option>Mixed opinions</option>
+        <option>Still somewhat judged</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">17. In your city, are there many tattoo shops?</label>
+      <select name="tattoo_shops">
+        <option value="">Select one</option>
+        <option>Yes, they are easy to find</option>
+        <option>Some, but not everywhere</option>
+        <option>Very few</option>
+        <option>I rarely notice them</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">18. Are there any streets, neighborhoods, or areas known for tattoo studios?</label>
+      <textarea name="tattoo_area" placeholder="Please describe if you know any."></textarea>
+    </div>
+
+    <div class="question">
+      <label class="q">19. Would you use an AI tattoo preview feature?</label>
+      <select name="ai_tattoo_use">
+        <option value="">Select one</option>
+        <option>Yes, to preview before getting a real tattoo</option>
+        <option>Yes, just for fun or social media</option>
+        <option>Maybe, depending on the style and realism</option>
+        <option>No, I am not interested</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">20. What tattoo styles would be most attractive to you or your friends? Select all that apply.</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Minimalist" /> Minimalist</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Fine line" /> Fine line</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Floral" /> Floral</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Lettering" /> Lettering / quotes</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Religious/spiritual" /> Religious / spiritual symbols</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Anime/K-pop inspired" /> Anime / K-pop inspired</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Tribal/traditional" /> Tribal / traditional</label>
+      <label class="option"><input type="checkbox" name="tattoo_styles" value="Other" /> Other</label>
+    </div>
+
+    <h2>5. Video Beauty</h2>
+
+    <div class="question">
+      <label class="q">21. How often do you create or post videos?</label>
+      <select name="video_frequency">
+        <option value="">Select one</option>
+        <option>Almost every day</option>
+        <option>A few times a week</option>
+        <option>A few times a month</option>
+        <option>Rarely</option>
+        <option>Never</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">22. Which platforms do you use for videos? Select all that apply.</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="TikTok" /> TikTok</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="Instagram Reels" /> Instagram Reels</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="YouTube Shorts" /> YouTube Shorts</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="Kwai" /> Kwai</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="WhatsApp Status" /> WhatsApp Status</label>
+      <label class="option"><input type="checkbox" name="video_platforms" value="Other" /> Other</label>
+    </div>
+
+    <div class="question">
+      <label class="q">23. What video beauty features would you use? Select up to 3.</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Skin smoothing" /> Skin smoothing</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Acne removal" /> Acne removal</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Face slimming" /> Face slimming</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Makeup" /> Makeup</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Lighting enhancement" /> Lighting enhancement</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Filters" /> Filters</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="Body adjustment" /> Body adjustment</label>
+      <label class="option"><input type="checkbox" name="video_beauty" value="I would not use video beauty" /> I would not use video beauty</label>
+    </div>
+
+    <div class="question">
+      <label class="q">24. How do you think Brazilian users feel about video beautification?</label>
+      <select name="brazil_video_beauty_acceptance">
+        <option value="">Select one</option>
+        <option>Very open to it</option>
+        <option>Generally open, if it looks natural</option>
+        <option>Mixed opinions</option>
+        <option>Not very interested</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <h2>6. AI Influencers</h2>
+
+    <div class="question">
+      <label class="q">25. Have you heard of AI influencers or virtual influencers?</label>
+      <select name="heard_ai_influencer">
+        <option value="">Select one</option>
+        <option>Yes, I know them well</option>
+        <option>Yes, I have heard of them</option>
+        <option>Maybe, but I am not familiar</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">26. What is your opinion of AI influencers?</label>
+      <select name="ai_influencer_opinion">
+        <option value="">Select one</option>
+        <option>Interesting and entertaining</option>
+        <option>Useful for brands and advertising</option>
+        <option>A little strange but acceptable</option>
+        <option>Uncomfortable or fake</option>
+        <option>I do not have an opinion yet</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">27. Do you think AI influencers could become popular in Brazil?</label>
+      <select name="ai_influencer_brazil">
+        <option value="">Select one</option>
+        <option>Yes, definitely</option>
+        <option>Maybe, among young people</option>
+        <option>Maybe, but only for certain topics</option>
+        <option>No, people prefer real influencers</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <h2>7. K-pop & Brazilian Trends</h2>
+
+    <div class="question">
+      <label class="q">28. How interested are you in K-pop?</label>
+      <select name="kpop_interest">
+        <option value="">Select one</option>
+        <option>I am a big fan</option>
+        <option>I like some groups/songs</option>
+        <option>I know about it but do not follow closely</option>
+        <option>I am not interested</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">29. Which K-pop groups or artists are most popular in Brazil right now?</label>
+      <textarea name="popular_kpop" placeholder="Please list any groups/artists you think are popular."></textarea>
+    </div>
+
+    <div class="question">
+      <label class="q">30. Which K-pop groups or artists do you personally like?</label>
+      <textarea name="personal_kpop" placeholder="Please share your favorites."></textarea>
+    </div>
+
+    <div class="question">
+      <label class="q">31. Does K-pop influence your beauty, fashion, photo editing, or social media style?</label>
+      <select name="kpop_influence">
+        <option value="">Select one</option>
+        <option>Yes, a lot</option>
+        <option>Yes, a little</option>
+        <option>Not really</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">32. Would you try K-pop-inspired AI features?</label>
+      <label class="option"><input type="checkbox" name="kpop_ai" value="K-pop makeup" /> K-pop makeup</label>
+      <label class="option"><input type="checkbox" name="kpop_ai" value="K-pop hairstyle/hair color" /> K-pop hairstyle / hair color</label>
+      <label class="option"><input type="checkbox" name="kpop_ai" value="Idol-style AI avatar" /> Idol-style AI avatar</label>
+      <label class="option"><input type="checkbox" name="kpop_ai" value="K-pop photo filters" /> K-pop photo filters</label>
+      <label class="option"><input type="checkbox" name="kpop_ai" value="Not interested" /> Not interested</label>
+    </div>
+
+    <h2>8. Final Evaluation</h2>
+
+    <div class="question">
+      <label class="q">33. Which feature would you most likely try first?</label>
+      <select name="first_try">
+        <option value="">Select one</option>
+        <option>AI photo beautification</option>
+        <option>AI tattoo preview</option>
+        <option>Video beautification</option>
+        <option>AI avatar</option>
+        <option>AI makeup / hairstyle</option>
+        <option>K-pop-inspired AI effects</option>
+        <option>AI influencer interaction</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="q">34. Which feature do you think would be most popular among young Brazilian women?</label>
+      <textarea name="most_popular_reason" placeholder="Please explain briefly."></textarea>
+    </div>
+
+    <div class="question">
+      <label class="q">35. Any final thoughts or suggestions?</label>
+      <textarea name="final_thoughts" placeholder="Anything else you would like to share?"></textarea>
+    </div>
+
+    <div class="button-row">
+      <button type="button" onclick="downloadResponses()">Download My Responses</button>
+      <button type="button" class="secondary" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <p class="footer-note">
+      Note: This is a local form. Responses are not automatically submitted online. Please click “Download My Responses” and send the downloaded file to the researcher.
+    </p>
+  </form>
+</div>
+
+<script>
+function downloadResponses() {
+  const form = document.getElementById('surveyForm');
+  const data = new FormData(form);
+  const grouped = {};
+
+  for (const [key, value] of data.entries()) {
+    if (!grouped[key]) {
+      grouped[key] = [];
+    }
+    grouped[key].push(value);
+  }
+
+  let text = "Brazil Female User Research Survey Responses\n";
+  text += "================================================\n\n";
+
+  for (const key in grouped) {
+    text += key + ":\n";
+    text += grouped[key].join(", ") + "\n\n";
+  }
+
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "brazil_user_research_responses.txt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
