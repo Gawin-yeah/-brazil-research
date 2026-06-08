@@ -5,41 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Survey</title>
   <style>
-    :root {
-      --primary: #111;
-      --secondary: #3b82f6;
-      --bg: #f8f9fa;
-      --card: #ffffff;
-      --text: #333;
-      --border: #e2e8f0;
-    }
-
+    :root { --primary: #111; --secondary: #3b82f6; --bg: #f8f9fa; --card: #ffffff; --text: #333; --border: #e2e8f0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
     .container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
     .card { background: var(--card); padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-    
     .lang-switcher { display: flex; justify-content: flex-end; margin-bottom: 20px; gap: 10px; }
-    select#langPicker { padding: 8px 15px; border-radius: 20px; border: 1px solid var(--border); outline: none; background: #fff; cursor: pointer; font-size: 14px; }
-
-    h1 { font-size: 26px; margin-bottom: 10px; color: var(--primary); font-weight: 800; }
+    select#langPicker { padding: 8px 15px; border-radius: 20px; border: 1px solid var(--border); outline: none; background: #fff; cursor: pointer; font-size: 13px; }
+    h1 { font-size: 24px; margin-bottom: 10px; color: var(--primary); font-weight: 800; }
     .intro { color: #666; margin-bottom: 40px; line-height: 1.6; border-left: 4px solid var(--secondary); padding-left: 15px; font-size: 15px; }
-    
-    h2 { font-size: 18px; color: var(--secondary); margin-top: 50px; border-bottom: 1px solid var(--border); padding-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .question { margin: 30px 0; }
-    label.q { display: block; font-weight: 600; margin-bottom: 12px; font-size: 16px; }
+    h2 { font-size: 16px; color: var(--secondary); margin-top: 45px; border-bottom: 1px solid var(--border); padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .question { margin: 28px 0; }
+    label.q { display: block; font-weight: 600; margin-bottom: 10px; font-size: 15px; }
     .note { font-size: 13px; color: #888; margin-bottom: 8px; font-style: italic; }
-
     input[type="text"], input[type="number"], select, textarea {
       width: 100%; padding: 12px 15px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; box-sizing: border-box; background: #fff;
     }
     textarea { min-height: 100px; resize: vertical; }
-    
     button[type="submit"] {
-      width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 40px; transition: 0.3s;
+      width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 8px; font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 40px; transition: 0.2s;
     }
-    button[type="submit"]:hover { background: #333; transform: translateY(-1px); }
-
-    @media (max-width: 600px) { .card { padding: 24px; } h1 { font-size: 22px; } }
+    button[type="submit"]:hover { background: #333; }
+    .footer-note { text-align: center; font-size: 12px; color: #aaa; margin-top: 40px; }
+    @media (max-width: 600px) { .card { padding: 24px; } }
   </style>
 </head>
 <body>
@@ -54,32 +41,26 @@
   </div>
 
   <div class="card">
-    <h1 id="t-title">User Research Survey</h1>
+    <h1 id="t-title">Survey</h1>
     <p class="intro" id="t-intro">This survey explores aesthetic habits, video retouching, and cultural trends. Your feedback is very important to us.</p>
 
     <form id="researchForm" action="https://formspree.io/f/xzdqzkvy" method="POST">
       
-      <!-- Section 1 -->
       <h2 id="t-sec1">1. Background</h2>
-      
       <div class="question">
         <label class="q" id="q-age">1. Your Age</label>
         <input type="number" name="Age" required>
       </div>
-
       <div class="question">
         <label class="q" id="q-location">2. Location (Country, State, City)</label>
         <input type="text" name="Full_Location" placeholder="e.g. Brazil, São Paulo, Campinas" required>
       </div>
-
       <div class="question">
         <label class="q" id="q-job">3. Occupation / Field of Study</label>
         <input type="text" name="Occupation" required>
       </div>
-
       <div class="question">
-        <label class="q" id="q-class">4. Which describes your current lifestyle & spending situation?</label>
-        <div class="note" id="n-class">This helps us understand user groups politely.</div>
+        <label class="q" id="q-class">4. Which describes your current lifestyle & spending?</label>
         <select name="Socio_Economic" required>
           <option value="" id="opt-select">Select one</option>
           <option value="Essential">Focus on essential needs.</option>
@@ -88,59 +69,46 @@
           <option value="Elite">Luxury lifestyle, following latest trends.</option>
         </select>
       </div>
-
       <div class="question">
         <label class="q" id="q-device">5. Your Current Phone Model</label>
         <input type="text" name="Phone_Model" placeholder="e.g. iPhone 15 Pro, Samsung Galaxy S24" required>
       </div>
 
-      <!-- Section 2 -->
       <h2 id="t-sec2">2. Photo & Video Retouching</h2>
-
       <div class="question">
-        <label class="q" id="q-apps">6. Which apps do you use for photo/video editing? Please list them.</label>
-        <textarea name="Apps_List" placeholder="e.g. Instagram, CapCut, Picsart, Remini..."></textarea>
+        <label class="q" id="q-apps">6. Which apps do you use for photo/video editing?</label>
+        <textarea name="Apps_List" id="p-apps" placeholder="e.g. Lightroom, Facetune, CapCut, Instagram..."></textarea>
       </div>
-
       <div class="question">
         <label class="q" id="q-features">7. Which specific features do you use the most? Why?</label>
         <textarea name="Top_Features" placeholder="e.g. Face reshaping, skin retouching, body slim..."></textarea>
       </div>
-
       <div class="question">
-        <label class="q" id="q-video-retouch">8. What is your opinion on 'Video Retouching' (manually editing face/body in recorded videos)?</label>
+        <label class="q" id="q-video-retouch">8. What is your opinion on 'Video Retouching' (manually editing face/body in videos)?</label>
         <div class="note" id="n-video-retouch">Do you feel the need to retouch your videos before posting?</div>
         <textarea name="Video_Retouch_Opinion"></textarea>
       </div>
 
-      <!-- Section 3 -->
       <h2 id="t-sec3">3. AI & Virtual Trends</h2>
-
       <div class="question">
         <label class="q" id="q-ai-beauty">9. How do you feel about AI-generated beauty? Does it look too 'fake' or is it acceptable?</label>
         <textarea name="AI_Beauty_Opinion"></textarea>
       </div>
-
       <div class="question">
-        <label class="q" id="q-ai-influencer">10. Do you follow AI Influencers? Are they popular in Brazil?</label>
-        <div class="note" id="n-ai-influencer">Have you ever encountered them on your feed (Instagram/TikTok)?</div>
+        <label class="q" id="q-ai-influencer">10. Do you follow AI Influencers? Are they popular in your region?</label>
         <textarea name="AI_Influencer_Opinion"></textarea>
       </div>
 
-      <!-- Section 4 -->
-      <h2 id="t-sec4">4. Tattoo</h2>
-
+      <h2 id="t-sec4">4. Tattoo Culture</h2>
       <div class="question">
         <label class="q" id="q-tattoo-status">11. Do you have tattoos? What is the perception of tattoos in your circle?</label>
-        <textarea name="Tattoo_Culture_View"></textarea>
+        <textarea name="Tattoo_View"></textarea>
       </div>
-
       <div class="question">
-        <label class="q" id="q-tattoo-street">12. Are there specific neighborhoods or 'tattoo streets' in your city?</label>
-        <div class="note" id="n-tattoo-street">How common are they? (e.g., every block has one).</div>
-        <textarea name="Tattoo_Geography_Brazil"></textarea>
+        <label class="q" id="q-tattoo-street">12. How visible is tattoo culture in your city? Are there iconic districts known for tattoo studios?</label>
+        <div class="note" id="n-tattoo-street">Is it common to see a studio in every neighborhood, or only in specific 'cool' areas?</div>
+        <textarea name="Tattoo_Visibility"></textarea>
       </div>
-
       <div class="question">
         <label class="q" id="q-ai-tattoo">13. Would you use an 'AI Tattoo' feature?</label>
         <select name="AI_Tattoo_Interest">
@@ -149,29 +117,23 @@
           <option value="No" id="opt-no">Not interested</option>
         </select>
       </div>
+      <div class="question">
+        <label class="q" id="q-ai-tattoo-why">14. What would be your main reason for using (or not using) an AI Tattoo feature?</label>
+        <textarea name="AI_Tattoo_Reason" placeholder="e.g. To preview before a real one, to post on social media, or privacy concerns."></textarea>
+      </div>
 
-      <!-- Section 5 -->
       <h2 id="t-sec5">5. K-pop</h2>
-
       <div class="question">
-        <label class="q" id="q-kpop-why">14. Do you like K-pop? What specifically attracts you to it?</label>
-        <div class="note" id="n-kpop-why">Music, dance, fashion, the idols' look, etc.</div>
-        <textarea name="Kpop_Attraction_Reason"></textarea>
+        <label class="q" id="q-kpop-why">15. Do you like K-pop? What specifically attracts you to it?</label>
+        <textarea name="Kpop_Attraction"></textarea>
       </div>
-
-      <div class="question">
-        <label class="q" id="q-kpop-groups">15. Which K-pop groups or artists are currently trending in Brazil?</label>
-        <input type="text" name="Trending_Kpop_Brazil">
-      </div>
-
       <div class="question">
         <label class="q" id="q-kpop-impact">16. Does K-pop aesthetic influence your personal style or photo editing?</label>
-        <textarea name="Kpop_Aesthetic_Impact"></textarea>
+        <textarea name="Kpop_Impact"></textarea>
       </div>
 
       <button type="submit" id="btn-submit">Submit Responses</button>
     </form>
-    
     <p class="footer-note" id="t-footer">Your information is confidential and used for research only.</p>
   </div>
 </div>
@@ -179,58 +141,111 @@
 <script>
 const translations = {
   en: {
-    title: "User Research Survey",
+    title: "Survey",
     intro: "This survey explores aesthetic habits, video retouching, and cultural trends. Your feedback is very important to us.",
-    sec1: "1. Background",
-    sec2: "2. Photo & Video Retouching",
-    sec3: "3. AI & Virtual Trends",
-    sec4: "4. Tattoo",
-    sec5: "5. K-pop",
-    q_age: "1. Your Age",
-    q_location: "2. Location (Country, State, City)",
-    q_job: "3. Occupation / Field of Study",
-    q_class: "4. Which describes your current lifestyle & spending situation?",
-    n_class: "This helps us understand user groups politely.",
-    q_device: "5. Your Current Phone Model",
-    q_apps: "6. Which apps do you use for photo/video editing? Please list them.",
+    sec1: "1. Background", sec2: "2. Photo & Video Retouching", sec3: "3. AI & Virtual Trends", sec4: "4. Tattoo Culture", sec5: "5. K-pop",
+    q_age: "1. Your Age", q_location: "2. Location (Country, State, City)", q_job: "3. Occupation / Field of Study", q_class: "4. Which describes your current lifestyle & spending?",
+    q_device: "5. Your Current Phone Model", q_apps: "6. Which apps do you use for photo/video editing?",
+    p_apps: "e.g. Lightroom, Facetune, CapCut, Instagram...",
     q_features: "7. Which specific features do you use the most? Why?",
     q_video_retouch: "8. What is your opinion on 'Video Retouching' (manually editing face/body in videos)?",
     n_video_retouch: "Do you feel the need to retouch your videos before posting?",
     q_ai_beauty: "9. How do you feel about AI-generated beauty? Does it look too 'fake' or is it acceptable?",
-    q_ai_influencer: "10. Do you follow AI Influencers? Are they popular in Brazil?",
-    n_ai_influencer: "Have you ever encountered them on your feed (Instagram/TikTok)?",
+    q_ai_influencer: "10. Do you follow AI Influencers? Are they popular in your region?",
     q_tattoo_status: "11. Do you have tattoos? What is the perception of tattoos in your circle?",
-    q_tattoo_street: "12. Are there specific neighborhoods or 'tattoo streets' in your city?",
-    n_tattoo_street: "How common are they? (e.g., every block has one).",
+    q_tattoo_street: "12. How visible is tattoo culture in your city? Are there iconic districts known for tattoo studios?",
+    n_tattoo_street: "Is it common to see a studio in every neighborhood, or only in specific 'cool' areas?",
     q_ai_tattoo: "13. Would you use an 'AI Tattoo' feature?",
-    q_kpop_why: "14. Do you like K-pop? What specifically attracts you to it?",
-    n_kpop_why: "Music, dance, fashion, the idols' look, etc.",
-    q_kpop_groups: "15. Which K-pop groups or artists are currently trending in Brazil?",
+    q_ai_tattoo_why: "14. What would be your main reason for using (or not using) an AI Tattoo feature?",
+    q_kpop_why: "15. Do you like K-pop? What specifically attracts you to it?",
     q_kpop_impact: "16. Does K-pop aesthetic influence your personal style or photo editing?",
-    btn: "Submit Responses",
-    btn_loading: "Submitting...",
-    footer: "Your information is confidential and used for research only.",
-    select: "Select one",
-    yes: "Yes, definitely",
-    maybe: "Maybe/For fun",
-    no: "Not interested"
+    btn: "Submit Responses", btn_loading: "Submitting...", footer: "Your information is confidential and used for research only.",
+    select: "Select one", yes: "Yes, definitely", maybe: "Maybe/For fun", no: "Not interested"
   },
   pt: {
-    title: "Questionário de Pesquisa",
-    intro: "Esta pesquisa explora hábitos estéticos, retoque de vídeo e tendências culturais. Seu feedback é muito importante para nós.",
-    sec1: "1. Perfil",
-    sec2: "2. Retoque de Foto e Vídeo",
-    sec3: "3. IA e Tendências",
-    sec4: "4. Tatuagem",
-    sec5: "5. K-pop",
-    q_age: "1. Sua Idade",
-    q_location: "2. Localização (País, Estado, Cidade)",
-    q_job: "3. Ocupação / Área de Estudo",
-    q_class: "4. Qual descreve melhor seu estilo de vida e situação de gastos?",
-    n_class: "Isso nos ajuda a entender os grupos de forma respeitosa.",
-    q_device: "5. Modelo do seu Celular Atual",
-    q_apps: "6. Quais apps você usa para editar fotos/vídeos? Por favor, liste-os.",
+    title: "Questionário",
+    intro: "Esta pesquisa explora hábitos estéticos, retoque de vídeo e tendências culturais. Seu feedback é muito importante.",
+    sec1: "1. Perfil", sec2: "2. Retoque de Foto e Vídeo", sec3: "3. IA e Tendências", sec4: "4. Cultura de Tatuagem", sec5: "5. K-pop",
+    q_age: "1. Sua Idade", q_location: "2. Localização (País, Estado, Cidade)", q_job: "3. Ocupação / Área de Estudo", q_class: "4. Qual melhor descreve seu estilo de vida e gastos?",
+    q_device: "5. Modelo do Celular Atual", q_apps: "6. Quais apps você usa para editar fotos/vídeos?",
+    p_apps: "ex: Lightroom, Facetune, CapCut, Instagram...",
     q_features: "7. Quais funções específicas você mais usa? Por quê?",
-    q_video_retouch: "8. Qual sua opinião sobre 'Retoque de Vídeo' (editar rosto/corpo em vídeos gravados)?",
-    n_video_retouch: "Você sente necessidade de retocar seus vídeos antes de postar?",
-    q_ai_beauty:
+    q_video_retouch: "8. Qual sua opinião sobre 'Retoque de Vídeo' (editar rosto/corpo em vídeos)?",
+    n_video_retouch: "Você sente necessidade de retocar vídeos antes de postar?",
+    q_ai_beauty: "9. O que você acha da beleza por IA? Parece 'fake' ou é aceitável?",
+    q_ai_influencer: "10. Você segue influenciadores de IA? Eles são populares na sua região?",
+    q_tattoo_status: "11. Você tem tatuagens? Qual a percepção no seu círculo social?",
+    q_tattoo_street: "12. Quão visível é a cultura da tatuagem na sua cidade? Existem bairros icônicos de estúdios?",
+    n_tattoo_street: "É comum ver estúdios em todo bairro ou apenas em áreas específicas?",
+    q_ai_tattoo: "13. Você usaria um recurso de 'IA de Tatuagem'?",
+    q_ai_tattoo_why: "14. Qual seria o principal motivo para usar (ou não) a IA de Tatuagem?",
+    q_kpop_why: "15. Você gosta de K-pop? O que especificamente te atrai?",
+    q_kpop_impact: "16. A estética K-pop influencia seu estilo ou edição de fotos?",
+    btn: "Enviar Respostas", btn_loading: "Enviando...", footer: "Suas informações são confidenciais.",
+    select: "Selecione", yes: "Sim, com certeza", maybe: "Talvez / Por diversão", no: "Não tenho interesse"
+  },
+  zh: {
+    title: "调研问卷",
+    intro: "本调研涵盖个人审美、视频后期修饰、AI 趋势及 K-pop 影响。您的反馈对我们非常重要。",
+    sec1: "1. 背景信息", sec2: "2. 照片与视频修饰", sec3: "3. AI 与虚拟趋势", sec4: "4. 纹身文化", sec5: "5. K-pop",
+    q_age: "1. 您的年龄", q_location: "2. 地点（国家、省、市）", q_job: "3. 职业 / 就读专业", q_class: "4. 以下哪项最能描述您目前的生活方式与消费？",
+    q_device: "5. 您目前的手机型号", q_apps: "6. 您使用哪些 App 剪辑修图？",
+    p_apps: "例如：Lightroom, Facetune, CapCut, Instagram...",
+    q_features: "7. 您最常使用哪些特定功能？为什么？",
+    q_video_retouch: "8. 您对“视频修饰”（后期编辑已录制视频中的脸部/身材）有何看法？",
+    n_video_retouch: "在发布视频前，您修饰视频的频率高吗？",
+    q_ai_beauty: "9. 您如何看待 AI 生成的美感？觉得“太假”还是可以接受？",
+    q_ai_influencer: "10. 您关注 AI 网红吗？他们在您当地火吗？",
+    q_tattoo_status: "11. 您有纹身吗？您身边的人对纹身的看法如何？",
+    q_tattoo_street: "12. 纹身文化在您的城市普及度如何？是否有专门的纹身店聚集区？",
+    n_tattoo_street: "是每个街区都能看到纹身店，还是只在特定的区域才有？",
+    q_ai_tattoo: "13. 您会使用“AI 纹身”功能吗？",
+    q_ai_tattoo_why: "14. 您使用（或不使用）AI 纹身功能的主要原因是什么？",
+    q_kpop_why: "15. 您喜欢 K-pop 吗？具体是什么吸引了您？",
+    q_kpop_impact: "16. K-pop 审美是否影响了您的个人风格或修图方式？",
+    btn: "提交回答", btn_loading: "提交中...", footer: "您的信息将严格保密。",
+    select: "请选择", yes: "是的，肯定会", maybe: "可能会/为了好玩", no: "不感兴趣"
+  }
+};
+
+function changeLanguage() {
+  const lang = document.getElementById('langPicker').value;
+  const t = translations[lang];
+  Object.keys(t).forEach(k => {
+    const el = document.getElementById(k);
+    if(el) el.textContent = t[k];
+  });
+  document.getElementById('p-apps').placeholder = t.p_apps;
+  document.getElementById('opt-select').textContent = t.select;
+  document.getElementById('opt-yes').textContent = t.yes;
+  document.getElementById('opt-maybe').textContent = t.maybe;
+  document.getElementById('opt-no').textContent = t.no;
+}
+
+const form = document.getElementById('researchForm');
+form.oninput = () => {
+  const data = new FormData(form);
+  const obj = {};
+  data.forEach((v, k) => obj[k] = v);
+  localStorage.setItem('survey_draft_v3', JSON.stringify(obj));
+};
+
+window.onload = () => {
+  const lang = localStorage.getItem('user_lang') || 'en';
+  document.getElementById('langPicker').value = lang;
+  changeLanguage();
+  const saved = JSON.parse(localStorage.getItem('survey_draft_v3'));
+  if (saved) {
+    Object.keys(saved).forEach(k => { if (form.elements[k]) form.elements[k].value = saved[k]; });
+  }
+};
+
+form.onsubmit = () => {
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.textContent = translations[document.getElementById('langPicker').value].btn_loading;
+  localStorage.removeItem('survey_draft_v3');
+};
+</script>
+</body>
+</html>
