@@ -26,7 +26,7 @@
     }
     button[type="submit"]:hover { background: #333; }
     .footer-note { text-align: center; font-size: 12px; color: #aaa; margin-top: 40px; }
-    @media (max-width: 600px) { .card { padding: 20px; } }
+    @media (max-width: 600px) { .card { padding: 24px; } }
   </style>
 </head>
 <body>
@@ -85,7 +85,6 @@
       </div>
       <div class="question">
         <label class="q" id="q-video-retouch">8. What is your opinion on 'Video Retouching' (manually editing face/body in videos)?</label>
-        <div class="note" id="n-video-retouch">Do you feel the need to retouch your videos before posting?</div>
         <textarea name="Video_Retouch_Opinion"></textarea>
       </div>
 
@@ -106,7 +105,6 @@
       </div>
       <div class="question">
         <label class="q" id="q-tattoo-street">12. How visible is tattoo culture in your city? Are there iconic districts known for tattoo studios?</label>
-        <div class="note" id="n-tattoo-street">Is it common to see a studio in every neighborhood, or only in specific 'cool' areas?</div>
         <textarea name="Tattoo_Visibility"></textarea>
       </div>
       <div class="question">
@@ -117,32 +115,46 @@
           <option value="No" id="opt-no">Not interested</option>
         </select>
       </div>
+
+      <h2 id="t-sec6">5. Aesthetics & Lifestyle</h2>
       <div class="question">
-        <label class="q" id="q-ai-tattoo-why">14. What would be your main reason for using (or not using) an AI Tattoo feature?</label>
-        <textarea name="AI_Tattoo_Reason" placeholder="e.g. To preview before a real one, to post on social media, or privacy concerns."></textarea>
+        <label class="q" id="q-makeup">14. When applying makeup, which part of your face is your top priority?</label>
+        <div class="note" id="n-makeup">Where do you spend the most time or use the best products?</div>
+        <select name="Makeup_Priority">
+          <option value="" id="opt-select2">Select one</option>
+          <option value="Skin">Skin/Foundation (Glow, Tan)</option>
+          <option value="Eyes">Eyes (Lashes, Eyeliner)</option>
+          <option value="Lips">Lips (Lipstick, Contour)</option>
+          <option value="Brows">Brows (Shaping)</option>
+        </select>
+      </div>
+      <div class="question">
+        <label class="q" id="q-fashion">15. What local events (festivals, clubs, street parties) do you attend, and what is your go-to fashion style for them?</label>
+        <textarea name="Local_Fashion_Events" placeholder="e.g. Lollapalooza, Blocos (Carnaval), Beach clubs..."></textarea>
+      </div>
+      <div class="question">
+        <label class="q" id="q-inspire">16. Where do you get your primary aesthetic inspiration?</label>
+        <div class="note" id="n-inspire">Local Brazilian stars, K-pop idols, Pinterest trends, or US/European celebrities?</div>
+        <textarea name="Aesthetic_Inspiration"></textarea>
+      </div>
+      <div class="question">
+        <label class="q" id="q-body-vs-face">17. In photos/videos, what do you care about more: a 'Perfect Face' or a 'Healthy Body Vibe' (skin glow, fit silhouette)?</label>
+        <textarea name="Body_vs_Face"></textarea>
       </div>
 
-      <h2 id="t-sec5">5. K-pop Influence</h2>
+      <h2 id="t-sec5">6. K-pop Influence</h2>
       <div class="question">
-        <label class="q" id="q-kpop-why">15. Do you like K-pop? What specifically attracts you to it?</label>
+        <label class="q" id="q-kpop-why">18. Do you like K-pop? What specifically attracts you to it?</label>
         <textarea name="Kpop_Attraction"></textarea>
       </div>
       <div class="question">
-        <label class="q" id="q-kpop-impact">16. Does K-pop aesthetic influence your personal style or photo editing?</label>
-        <textarea name="Kpop_Impact"></textarea>
+        <label class="q" id="q-kpop-merch">19. Do you collect or create fan merchandise (K-pop 'goods')? If so, what kind?</label>
+        <textarea name="Kpop_Merch"></textarea>
       </div>
-      <!-- 新增问题 17 -->
       <div class="question">
-        <label class="q" id="q-kpop-merch">17. Do you collect or create fan merchandise (K-pop 'goods')? If so, what kind?</label>
-        <div class="note" id="n-kpop-merch">Photocards, banners, custom stickers, handmade accessories, etc.</div>
-        <textarea name="Kpop_Merch_Habits"></textarea>
-      </div>
-      <!-- 新增问题 18 -->
-      <div class="question">
-        <label class="q" id="q-kpop-photo">18. Would you be willing to share a photo of your collection or creations with Gawin?</label>
-        <div class="note" id="n-kpop-photo">If 'Yes', please send the photo to Gawin separately (via DM/Email).</div>
-        <select name="Photo_Sharing_Consent">
-          <option value="Yes" id="opt-yes2">Yes, I will send it</option>
+        <label class="q" id="q-kpop-photo">20. Would you be willing to share a photo of your collection or creations with Gawin?</label>
+        <select name="Photo_Consent">
+          <option value="Yes" id="opt-yes2">Yes, I will send it separately</option>
           <option value="No" id="opt-no2">No, thank you</option>
         </select>
       </div>
@@ -156,94 +168,92 @@
 <script>
 const translations = {
   en: {
-    title: "Survey",
-    intro: "This survey explores aesthetic habits, video retouching, and cultural trends. Your feedback is very important to us.",
-    sec1: "1. Background", sec2: "2. Photo & Video Retouching", sec3: "3. AI & Virtual Trends", sec4: "4. Tattoo Culture", sec5: "5. K-pop Influence",
+    title: "Survey", intro: "This survey explores aesthetic habits, video retouching, and cultural trends. Your feedback is very important to us.",
+    sec1: "1. Background", sec2: "2. Photo & Video Retouching", sec3: "3. AI & Virtual Trends", sec4: "4. Tattoo Culture", 
+    sec6: "5. Aesthetics & Lifestyle", sec5: "6. K-pop Influence",
     q_age: "1. Your Age", q_location: "2. Location (Country, State, City)", q_job: "3. Occupation / Field of Study", q_class: "4. Which describes your current lifestyle & spending?",
     q_device: "5. Your Current Phone Model", q_apps: "6. Which apps do you use for photo/video editing?",
     p_apps: "e.g. Lightroom, Facetune, CapCut, Instagram...",
     q_features: "7. Which specific features do you use the most? Why?",
     q_video_retouch: "8. What is your opinion on 'Video Retouching' (manually editing face/body in videos)?",
-    n_video_retouch: "Do you feel the need to retouch your videos before posting?",
     q_ai_beauty: "9. How do you feel about AI-generated beauty? Does it look too 'fake' or is it acceptable?",
     q_ai_influencer: "10. Do you follow AI Influencers? Are they popular in your region?",
     q_tattoo_status: "11. Do you have tattoos? What is the perception of tattoos in your circle?",
     q_tattoo_street: "12. How visible is tattoo culture in your city? Are there iconic districts known for tattoo studios?",
-    n_tattoo_street: "Is it common to see a studio in every neighborhood, or only in specific 'cool' areas?",
     q_ai_tattoo: "13. Would you use an 'AI Tattoo' feature?",
-    q_ai_tattoo_why: "14. What would be your main reason for using (or not using) an AI Tattoo feature?",
-    q_kpop_why: "15. Do you like K-pop? What specifically attracts you to it?",
-    q_kpop_impact: "16. Does K-pop aesthetic influence your personal style or photo editing?",
-    q_kpop_merch: "17. Do you collect or create fan merchandise (K-pop 'goods')? If so, what kind?",
-    n_kpop_merch: "Photocards, banners, custom stickers, handmade accessories, etc.",
-    q_kpop_photo: "18. Would you be willing to share a photo of your collection or creations with Gawin?",
-    n_kpop_photo: "If 'Yes', please send the photo to Gawin separately (via DM/Email).",
+    q_makeup: "14. When applying makeup, which part of your face is your top priority?",
+    n_makeup: "Where do you spend the most time or use the best products?",
+    q_fashion: "15. What local events (festivals, clubs, street parties) do you attend, and what is your go-to fashion style for them?",
+    q_inspire: "16. Where do you get your primary aesthetic inspiration?",
+    n_inspire: "Local Brazilian stars, K-pop idols, Pinterest trends, or US/European celebrities?",
+    q_body_vs_face: "17. In photos/videos, what do you care about more: a 'Perfect Face' or a 'Healthy Body Vibe' (skin glow, fit silhouette)?",
+    q_kpop_why: "18. Do you like K-pop? What specifically attracts you to it?",
+    q_kpop_merch: "19. Do you collect or create fan merchandise (K-pop 'goods')? If so, what kind?",
+    q_kpop_photo: "20. Would you be willing to share a photo of your collection with Gawin?",
     btn: "Submit Responses", btn_loading: "Submitting...", footer: "Your information is confidential and used for research only.",
-    select: "Select one", yes: "Yes, definitely", maybe: "Maybe/For fun", no: "Not interested", yes2: "Yes, I will send it", no2: "No, thank you"
+    select: "Select one", yes: "Yes, definitely", maybe: "Maybe/For fun", no: "Not interested", yes2: "Yes, I will send it separately", no2: "No, thank you"
   },
   pt: {
-    title: "Questionário",
-    intro: "Esta pesquisa explora hábitos estéticos, retoque de vídeo e tendências culturais. Seu feedback é muito importante.",
-    sec1: "1. Perfil", sec2: "2. Retoque de Foto e Vídeo", sec3: "3. IA e Tendências", sec4: "4. Cultura de Tatuagem", sec5: "5. Influência do K-pop",
-    q_age: "1. Sua Idade", q_location: "2. Localização (País, Estado, Cidade)", q_job: "3. Ocupação / Área de Estudo", q_class: "4. Qual melhor descreve seu estilo de vida e gastos?",
-    q_device: "5. Modelo do Celular Atual", q_apps: "6. Quais apps você usa para editar fotos/vídeos?",
+    title: "Questionário", intro: "Esta pesquisa explora hábitos estéticos, retoque de vídeo e tendências culturais. Seu feedback é muito importante.",
+    sec1: "1. Perfil", sec2: "2. Retoque de Foto e Vídeo", sec3: "3. IA e Tendências", sec4: "4. Cultura de Tatuagem", 
+    sec6: "5. Estética e Estilo de Vida", sec5: "6. Influência do K-pop",
+    q_age: "1. Sua Idade", q_location: "2. Localização (País, Estado, Cidade)", q_job: "3. Ocupação", q_class: "4. Estilo de vida e gastos?",
+    q_device: "5. Modelo do Celular", q_apps: "6. Apps de edição que você usa?",
     p_apps: "ex: Lightroom, Facetune, CapCut, Instagram...",
-    q_features: "7. Quais funções específicas você mais usa? Por quê?",
-    q_video_retouch: "8. Qual sua opinião sobre 'Retoque de Vídeo' (editar rosto/corpo em vídeos)?",
-    n_video_retouch: "Você sente necessidade de retocar vídeos antes de postar?",
-    q_ai_beauty: "9. O que você acha da beleza por IA? Parece 'fake' ou é aceitável?",
-    q_ai_influencer: "10. Você segue influenciadores de IA? Eles são populares na sua região?",
-    q_tattoo_status: "11. Você tem tatuagens? Qual a percepção no seu círculo social?",
-    q_tattoo_street: "12. Quão visível é a cultura da tatuagem na sua cidade? Existem bairros icônicos?",
-    n_tattoo_street: "É comum ver estúdios em todo bairro ou apenas em áreas específicas?",
-    q_ai_tattoo: "13. Você usaria um recurso de 'IA de Tatuagem'?",
-    q_ai_tattoo_why: "14. Qual seria o principal motivo para usar (ou não) a IA de Tatuagem?",
-    q_kpop_why: "15. Você gosta de K-pop? O que especificamente te atrai?",
-    q_kpop_impact: "16. A estética K-pop influencia seu estilo ou edição de fotos?",
-    q_kpop_merch: "17. Você coleciona ou faz produtos de fãs ('goods' de K-pop)? Quais?",
-    n_kpop_merch: "Photocards, banners, adesivos personalizados, acessórios, etc.",
-    q_kpop_photo: "18. Você estaria disposta a compartilhar uma foto da sua coleção com Gawin?",
-    n_kpop_photo: "Se 'Sim', envie a foto para Gawin separadamente (DM/E-mail).",
-    btn: "Enviar Respostas", btn_loading: "Enviando...", footer: "Suas informações são confidenciais.",
-    select: "Selecione", yes: "Sim, com certeza", maybe: "Talvez / Por diversão", no: "Não tenho interesse", yes2: "Sim, eu vou enviar", no2: "Não, obrigada"
+    q_features: "7. Quais funções você mais usa? Por quê?",
+    q_video_retouch: "8. Opinião sobre 'Retoque de Vídeo' (editar rosto/corpo)?",
+    q_ai_beauty: "9. O que acha da beleza por IA? Parece 'fake' ou é aceitável?",
+    q_ai_influencer: "10. Você segue influenciadores de IA? São populares?",
+    q_tattoo_status: "11. Tem tatuagens? Qual a percepção no seu círculo?",
+    q_tattoo_street: "12. Cultura da tatuagem é visível na sua cidade? Há bairros icônicos?",
+    q_ai_tattoo: "13. Usaria 'IA de Tatuagem'?",
+    q_makeup: "14. Na maquiagem, qual parte do rosto é sua prioridade?",
+    n_makeup: "Onde você gasta mais tempo ou usa os melhores produtos?",
+    q_fashion: "15. Quais eventos locais (festivais, festas) você frequenta e qual seu estilo?",
+    q_inspire: "16. Onde você busca sua principal inspiração estética?",
+    n_inspire: "Estrelas brasileiras, ídolos de K-pop, Pinterest ou celebridades dos EUA/Europa?",
+    q_body_vs_face: "17. Em fotos/vídeos, o que importa mais: 'Rosto Perfeito' ou 'Vibe de Corpo Saudável' (brilho na pele, silhueta)?",
+    q_kpop_why: "18. Gosta de K-pop? O que te atrai?",
+    q_kpop_merch: "19. Você coleciona ou faz produtos de fãs? Quais?",
+    q_kpop_photo: "20. Compartilharia uma foto da sua coleção com Gawin?",
+    btn: "Enviar Respostas", btn_loading: "Enviando...", footer: "Informações confidenciais.",
+    select: "Selecione", yes: "Sim, com certeza", maybe: "Talvez", no: "Não", yes2: "Sim, enviarei separadamente", no2: "Não, obrigada"
   },
   zh: {
-    title: "调研问卷",
-    intro: "本调研涵盖个人审美、视频后期修饰、AI 趋势及 K-pop 影响。您的反馈对我们非常重要。",
-    sec1: "1. 背景信息", sec2: "2. 照片与视频修饰", sec3: "3. AI 与虚拟趋势", sec4: "4. 纹身文化", sec5: "5. K-pop 影响",
-    q_age: "1. 您的年龄", q_location: "2. 地点（国家、省、市）", q_job: "3. 职业 / 就读专业", q_class: "4. 以下哪项最能描述您目前的生活方式与消费？",
-    q_device: "5. 您目前的手机型号", q_apps: "6. 您使用哪些 App 剪辑修图？",
+    title: "调研问卷", intro: "本调研涵盖个人审美、视频修饰、AI 趋势及 K-pop 影响。您的反馈对我们非常重要。",
+    sec1: "1. 背景信息", sec2: "2. 照片与视频修饰", sec3: "3. AI 与虚拟趋势", sec4: "4. 纹身文化", 
+    sec6: "5. 审美与生活方式", sec5: "6. K-pop 影响",
+    q_age: "1. 您的年龄", q_location: "2. 地点（国家、省、市）", q_job: "3. 职业 / 专业", q_class: "4. 生活方式与消费水平？",
+    q_device: "5. 手机型号", q_apps: "6. 使用哪些修图 App？",
     p_apps: "例如：Lightroom, Facetune, CapCut, Instagram...",
-    q_features: "7. 您最常使用哪些特定功能？为什么？",
-    q_video_retouch: "8. 您对“视频修饰”（后期编辑已录制视频中的脸部/身材）有何看法？",
-    n_video_retouch: "在发布视频前，您修饰视频的频率高吗？",
-    q_ai_beauty: "9. 您如何看待 AI 生成的美感？觉得“太假”还是可以接受？",
-    q_ai_influencer: "10. 您关注 AI 网红吗？他们在您当地火吗？",
-    q_tattoo_status: "11. 您有纹身吗？您身边的人对纹身的看法如何？",
-    q_tattoo_street: "12. 纹身文化在您的城市普及度如何？是否有专门的纹身店聚集区？",
-    n_tattoo_street: "是每个街区都能看到纹身店，还是只在特定的区域才有？",
-    q_ai_tattoo: "13. 您会使用“AI 纹身”功能吗？",
-    q_ai_tattoo_why: "14. 您使用（或不使用）AI 纹身功能的主要原因是什么？",
-    q_kpop_why: "15. 您喜欢 K-pop 吗？具体是什么吸引了您？",
-    q_kpop_impact: "16. K-pop 审美是否影响了您的个人风格或修图方式？",
-    q_kpop_merch: "17. 您会收集或制作爱豆周边（K-pop Goods）吗？如果是，包括哪些？",
-    n_kpop_merch: "小卡、横幅、定制贴纸、手工饰品等。",
-    q_kpop_photo: "18. 您愿意单独给 Gawin 发送一张您的收藏或作品的照片吗？",
-    n_kpop_photo: "如果愿意，请通过私信或邮件单独发送照片给 Gawin。",
-    btn: "提交回答", btn_loading: "提交中...", footer: "您的信息将严格保密。",
-    select: "请选择", yes: "是的，肯定会", maybe: "可能会/为了好玩", no: "不感兴趣", yes2: "愿意，我会发送", no2: "不了，谢谢"
+    q_features: "7. 最常使用哪些功能？",
+    q_video_retouch: "8. 对“视频后期修饰”（修脸/修身材）的看法？",
+    q_ai_beauty: "9. 对 AI 美颜的看法？太假还是可以接受？",
+    q_ai_influencer: "10. 关注 AI 网红吗？当地火吗？",
+    q_tattoo_status: "11. 有纹身吗？身边人怎么看？",
+    q_tattoo_street: "12. 纹身文化普及吗？是否有纹身聚集区？",
+    q_ai_tattoo: "13. 会使用 AI 纹身功能吗？",
+    q_makeup: "14. 化妆时，脸部哪个部位是您的头等大事？",
+    n_makeup: "您在哪个部位花的时间最多或使用的产品最好？",
+    q_fashion: "15. 您常参加哪些当地活动（节日、派对），对应的穿搭风格是？",
+    q_inspire: "16. 您的审美灵感主要来自哪里？",
+    n_inspire: "巴西本土明星、K-pop 偶像、Pinterest 趋势，还是欧美明星？",
+    q_body_vs_face: "17. 在照片/视频中，您更在意“完美的脸”还是“健康的身体氛围”（皮肤光泽、身材线条）？",
+    q_kpop_why: "18. 喜欢 K-pop 吗？什么吸引了您？",
+    q_kpop_merch: "19. 会收集或制作爱豆周边吗？",
+    q_kpop_photo: "20. 愿意单独发一张您的收藏照片给 Gawin 吗？",
+    btn: "提交回答", btn_loading: "提交中...", footer: "信息严格保密。",
+    select: "请选择", yes: "是的", maybe: "可能会", no: "不感兴趣", yes2: "愿意，我会单独发送", no2: "不了，谢谢"
   }
 };
 
 function changeLanguage() {
   const lang = document.getElementById('langPicker').value;
   const t = translations[lang];
-  Object.keys(t).forEach(k => {
-    const el = document.getElementById(k);
-    if(el) el.textContent = t[k];
-  });
+  Object.keys(t).forEach(k => { const el = document.getElementById(k); if(el) el.textContent = t[k]; });
   document.getElementById('p-apps').placeholder = t.p_apps;
   document.getElementById('opt-select').textContent = t.select;
+  document.getElementById('opt-select2').textContent = t.select;
   document.getElementById('opt-yes').textContent = t.yes;
   document.getElementById('opt-maybe').textContent = t.maybe;
   document.getElementById('opt-no').textContent = t.no;
@@ -256,24 +266,22 @@ form.oninput = () => {
   const data = new FormData(form);
   const obj = {};
   data.forEach((v, k) => obj[k] = v);
-  localStorage.setItem('survey_draft_v4', JSON.stringify(obj));
+  localStorage.setItem('survey_v5_final', JSON.stringify(obj));
 };
 
 window.onload = () => {
   const lang = localStorage.getItem('user_lang') || 'en';
   document.getElementById('langPicker').value = lang;
   changeLanguage();
-  const saved = JSON.parse(localStorage.getItem('survey_draft_v4'));
-  if (saved) {
-    Object.keys(saved).forEach(k => { if (form.elements[k]) form.elements[k].value = saved[k]; });
-  }
+  const saved = JSON.parse(localStorage.getItem('survey_v5_final'));
+  if (saved) { Object.keys(saved).forEach(k => { if (form.elements[k]) form.elements[k].value = saved[k]; }); }
 };
 
 form.onsubmit = () => {
   const btn = document.getElementById('btn-submit');
   btn.disabled = true;
   btn.textContent = translations[document.getElementById('langPicker').value].btn_loading;
-  localStorage.removeItem('survey_draft_v4');
+  localStorage.removeItem('survey_v5_final');
 };
 </script>
 </body>
